@@ -1,9 +1,9 @@
 #!/bin/bash
-curl https://raw.githubusercontent.com/anaer/Sub/main/clash.yaml > clash.config.yaml || exit 1
+curl https://raw.githubusercontent.com/dinaneq/dinaneq.github.io/refs/heads/main/cm1.yml > clash.config.yaml || exit 1
 BUGSNI="graph.facebook.com"
 #BUGCDNOPOK="104.26.4.192"  #bug opok
 BUGCDNGAME="104.18.24.176"
-BUGCDNOPOK="104.22.28.102"  #bug opok
+BUGCDNOPOK="app.gopay.id"  #bug opok
 BUGCDN="104.21.69.223"  #bug sushiroll
 sed '/^proxy\-groups/,$d' clash.config.yaml > cutted
 csplit -z cutted /^-/ '{*}'
@@ -79,7 +79,7 @@ do
   cipher: auto
   name: "$vmesscdnName-$line"
   network: ws
-  port: 80
+  port: 443
   server: "$BUGCDN"
   skip-cert-verify: true
   tls: false
@@ -89,6 +89,7 @@ do
   ws-opts:
     headers:
       Host: "$vmesscdnHost"
+  servername: "$vmesscdnHost"
     path: "$vmesscdnPath"" >> ./vpnVmess-cdn.yaml.txt
 done < ./allvmesscdn
 
