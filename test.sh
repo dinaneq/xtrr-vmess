@@ -3,7 +3,7 @@ curl https://raw.githubusercontent.com/dinaneq/dinaneq.github.io/refs/heads/main
 BUGSNI="graph.facebook.com"
 #BUGCDNOPOK="104.26.4.192"  #bug opok
 BUGCDNGAME="104.18.24.176"
-BUGCDNOPOK="app.gopay.id"  #bug opok
+BUGCDNOPOK="ruangguru.com"  #bug opok
 BUGCDN="104.21.69.223"  #bug sushiroll
 sed '/^proxy\-groups/,$d' clash.config.yaml > cutted
 csplit -z cutted /^-/ '{*}'
